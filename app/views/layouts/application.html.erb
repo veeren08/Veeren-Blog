@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+ <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+    <% if !user_signed_in? %>
+      <nav class="navbar navbar-light bg-info">
+        <h1>Story...</h1>
+        <%= link_to "Home", root_path %>
+        <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+      </nav>
+    <% end %>
+ 
+    <% if user_signed_in? %>
+      <%= render 'nav' %>
+    <% end %>
+    <div class="container">
+      <br>
+      <div class="jumbotron">
+        <%= yield %>
+      </div>
+   </div>   
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</body>
+</html>

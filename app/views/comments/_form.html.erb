@@ -1,0 +1,16 @@
+<div class="card" style="padding: 20px;">
+  <h3>Add a comment:</h3>
+  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <b><%= form.label :User %></b><br>
+    <%= form.text_field :commenter, class:"form-control"%>
+  </p>
+  <p>
+    <b><%= form.label :Message %></b><br>
+    <%= form.text_area :body, class:"form-control" %>
+  </p>
+  <p>
+    <%= form.submit 'Comment', class: "btn btn-info btn-sm"%>
+  </p>
+<% end %>
+</div>

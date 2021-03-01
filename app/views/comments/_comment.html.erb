@@ -1,0 +1,15 @@
+<div class="card" style="padding-left: 10px;">
+  
+  <em><b>User:</b>
+  <%= comment.commenter %></em>
+<em>  <b>Comment:</b>
+  <%= comment.body %>
+  </em>
+<% if user_signed_in? %>
+  <p style="width:30px;">
+  <%= link_to 'Delete', [comment.article, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %></p>
+<% end %>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="card" style="padding: 20px;width:400px;">
+  <%= form_with local: true, model: article do |form| %>
+  <div>
+    <b><%= form.label :title %></b><br>
+    <%= form.text_field :title, class:"form-control" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <b><%= form.label :body %></b><br>
+    <%= form.text_area :body, class:"form-control"%><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit 'Submit Article', class: "btn btn-info"%>
+  </div>
+  <% end %>
+</div>
+</center>
