@@ -14,7 +14,7 @@
       <nav class="navbar navbar-light bg-info">
         <h1>Story...</h1>
         <%= link_to "Home", root_path %>
-        <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+        <p class="sign_in btn btn-info" style="color:white;"><%= link_to "Login", new_user_session_path %></p>
       </nav>
     <% end %>
  
@@ -29,5 +29,7 @@
    </div>   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <%= render 'footer' %>
+
 </body>
 </html>
